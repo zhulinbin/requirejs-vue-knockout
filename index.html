@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>knockout</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.title {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<p class="title">-----current knockout----</p>
+	<div id="knockout">
+		<div data-bind="text: koText"></div>
+	</div>
+
+
+	<p class="title">-----current knockout component----</p>
+	<div id="koComponent">
+		<ko-component></ko-component>
+	</div>
+
+	<p class="title">-----remote knockout-vue component----</p>
+	<div id="vueKnockoutElement">
+		<div class="vue-ko-element-component">
+			<vue-ko-element-component></vue-ko-element-component>
+		<div>
+		<div class="vue-ko-element-component">
+			<vue-ko-element-component></vue-ko-element-component>
+		<div>
+	</div>
+	<p class="title">-----remote knockout-vue component child__1----</p>
+	<maxpro></maxpro>
+	<p class="title">-----remote knockout-vue component child__2----</p>
+	<app-root></app-root>
+
+
+	<p class="title">-----remote vue-antd-component----</p>
+	<div id="vueAntd">
+		<vue-antd-component></vue-antd-component>
+	</div>
+
+</body>
+<script type="text/javascript" src="./lib/jquery.js"></script>
+<script type="text/javascript" src="./lib/knockout.js"></script>
+<script type="text/javascript" src="./lib/require.js" data-main="./lib/main"></script>
+<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript">
+	var viewModel = function() {
+		this.koText = 'knockout原生写法'
+	}
+	ko.applyBindings(viewModel(), $('#knockout')[0])
+</script>
+</html>
